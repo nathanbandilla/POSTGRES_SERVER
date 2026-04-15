@@ -1,5 +1,8 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import { Pool } from 'pg';
+
+dotenv.config();
+dotenv.config({ path: 'src/.env' });
 
 const requiredEnvVars = [
   'POSTGRES_HOST',

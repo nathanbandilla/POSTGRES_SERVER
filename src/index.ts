@@ -1,6 +1,9 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import express, { Request, Response } from 'express';
 import userRouter from './routes/user';
+
+dotenv.config();
+dotenv.config({ path: 'src/.env' });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,7 +13,7 @@ app.use(userRouter);
 app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({
     success: true,
-    msg: "hello, health user"
+    msg: "hello, postgres user"
   });
 });
 
